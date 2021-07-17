@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Login from "./components/Login";
+import { getTokenFromResponse } from "./spotify";
+import Dashboard from "./components/Dashboard";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+  const redirect = () => {
+    const hash = getTokenFromResponse();
+    window.location.hash = "";
+    let _token = hash.access_token;
+
+    if (!_token) {
+      return <Login />;
+    } else {
+      return <Dashboard token={_token} />;
+    }
+  };
+
+  return <div>{redirect()}</div>;
 }
-
-export default App;
