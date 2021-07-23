@@ -9,8 +9,8 @@ export default function Player({ token, trackUri }) {
   if (!token) return null;
   return (
     <SpotifyPlayer
+      autoPlay={false}
       token={token}
-      showSaveIcon
       callback={(state) => {
         if (!state.isPlaying) setPlay(false);
       }}

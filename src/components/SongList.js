@@ -1,16 +1,16 @@
 import React from "react";
+import SongItems from "./SongItems";
+import "../css/songList.css";
 
-const SongList = ({ songs }) => {
+const SongList = ({ songs, onSongSelect, token }) => {
   const renderList = songs.map((song) => {
-    console.log(songs);
     return (
-      <div className="item" key={song.albumUrl}>
-        <img className="ui image" src={song.albumUrl} alt={song.title} />
-        <div className="content">
-          <a className="header">{song.title}</a>
-          <div className="description">{song.artist}</div>
-        </div>
-      </div>
+      <SongItems
+        key={song.id}
+        onSongSelect={onSongSelect}
+        song={song}
+        token={token}
+      />
     );
   });
 

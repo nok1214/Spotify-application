@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import SongList from "./SongList";
-import Player from "./Player";
+import SongDetail from "./SongDetail";
 
 const s = new SpotifyWebApi();
 
 export default function Dashboard({ token }) {
   const [term, setTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [selectedSong, setSelectedSong] = useState(null);
 
   useEffect(() => {
     if (!token) return;
@@ -20,19 +21,8 @@ export default function Dashboard({ token }) {
     if (!token) return;
 
     s.searchTracks(term).then((response) => {
-      setSearchResults(
-        response.tracks.items.map((track) => {
-          const albumImage = track.album.images.filter(function (image) {
-            return image.height <= 64;
-          });
-          return {
-            artist: track.artists[0].name,
-            title: track.name,
-            uri: track.uri,
-            albumUrl: albumImage[0].url,
-          };
-        })
-      );
+      setSearchResults(response.tracks.items);
+      setSelectedSong(null);
     });
   };
 
@@ -50,11 +40,13 @@ export default function Dashboard({ token }) {
         </div>
       </form>
       <div>
-        <SongList songs={searchResults} />
+        <SongList
+          songs={searchResults}
+          onSongSelect={setSelectedSong}
+          token={token}
+        />
       </div>
-      <div>
-        <Player token={token} />
-      </div>
+      <SongDetail token={token} song={selectedSong?.uri} />
     </div>
   );
 }
