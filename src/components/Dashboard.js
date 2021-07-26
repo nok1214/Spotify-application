@@ -13,6 +13,9 @@ export default function Dashboard({ token }) {
   useEffect(() => {
     if (!token) return;
     s.setAccessToken(token);
+    s.getMe().then((data) => {
+      console.log(data);
+    });
   }, [token]);
 
   const onFormSubmit = (event) => {
