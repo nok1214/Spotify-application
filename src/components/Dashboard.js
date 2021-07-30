@@ -13,9 +13,6 @@ export default function Dashboard({ token }) {
   useEffect(() => {
     if (!token) return;
     s.setAccessToken(token);
-    s.getMe().then((data) => {
-      console.log(data);
-    });
   }, [token]);
 
   const onFormSubmit = (event) => {
@@ -31,6 +28,13 @@ export default function Dashboard({ token }) {
 
   return (
     <div className="ui segment">
+      <h2>Welcome to My Spotify Clone</h2>
+      <a
+        href="www.spotify.com/us/logout"
+        className="ui green right corner image label"
+      >
+        Log Out
+      </a>
       <form className="ui form" onSubmit={onFormSubmit}>
         <div className="field">
           <label>Search Songs/Artists</label>
@@ -49,7 +53,9 @@ export default function Dashboard({ token }) {
           token={token}
         />
       </div>
-      <SongDetail token={token} song={selectedSong?.uri} />
+      <div>
+        <SongDetail token={token} song={selectedSong?.uri} />
+      </div>
     </div>
   );
 }
