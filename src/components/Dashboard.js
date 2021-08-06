@@ -29,12 +29,6 @@ export default function Dashboard({ token }) {
   return (
     <div className="ui segment">
       <h2>Welcome to My Spotify Clone</h2>
-      <a
-        href="www.spotify.com/us/logout"
-        className="ui green right corner image label"
-      >
-        Log Out
-      </a>
       <form className="ui form" onSubmit={onFormSubmit}>
         <div className="field">
           <label>Search Songs/Artists</label>
