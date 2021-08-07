@@ -11,4 +11,4 @@ This Spotify clone is using Client Credentials Flow to obtain
 access token.
 
 Log in and search song name or artist's name to find the song,
-using react-spotify-web-playback to play the song that you selected.
+select the song and it will redirect you to Spotify.com for more detail.
