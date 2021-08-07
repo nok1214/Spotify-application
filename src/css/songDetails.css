@@ -1,0 +1,15 @@
+.song-list {
+  overflow: auto;
+  height: 700px;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.selected-song-detail {
+  padding-left: 40%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/songItem.css";
 
 const SongItems = ({ song, onSongSelect }) => {
   const albumImage = song.album.images.filter(function (image) {
