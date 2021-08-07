@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Dashboard from "./components/Dashboard";
 import request from "request";
-//import { getTokenFromResponse } from "./spotify";
 
 export default function App() {
   const [accessToken, setAccessToken] = useState("");
@@ -36,24 +35,3 @@ export default function App() {
 
   return <Dashboard token={accessToken} />;
 }
-
-// ====for Implicit Grant use ====
-
-// const redirect = () => {
-//   const accessTokenMatch = window.location.hash.match(/access_token=([^&]*)/);
-//   if (accessTokenMatch) {
-//     let _token = accessTokenMatch[1];
-//     console.log(accessTokenMatch[1]);
-//     return <Dashboard token={_token} />;
-//   } else {
-//     return <Login />;
-//   }
-
-// if (!_token) {
-//   return <Login />;
-// } else {
-//   return <Dashboard token={_token} />;
-// }
-
-// ======      end      ======
-// };

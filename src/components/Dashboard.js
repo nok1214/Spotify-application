@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import SpotifyWebApi from "spotify-web-api-js";
 import SongList from "./SongList";
 import SongDetails from "./SongDetails";
 
 import "../css/songDetails.css";
+
+import SpotifyWebApi from "spotify-web-api-js";
 
 const s = new SpotifyWebApi();
 
