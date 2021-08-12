@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Dashboard from "./components/Dashboard";
 import request from "request";
 
+console.log(process.env);
+
 export default function App() {
   const [accessToken, setAccessToken] = useState("");
 
