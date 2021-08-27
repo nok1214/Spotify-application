@@ -27,7 +27,7 @@ React JS, React Hook, Spotify API, Semantic UI
 
 ## Quick Start
 
-After cloning the repository onto your local machine, just use `npm install` and `npm start` and you can start searching for songs.
+After cloning the repository onto your local machine, use `npm install` and `npm start` and you can start searching for songs.
 
 ================================================================
 
