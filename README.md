@@ -1,24 +1,33 @@
-# Getting Started with Spotify Application
+# Spotify Application
 
-use git clone https://github.com/nok1214/Spotify-application.git
-then
-npm install the application
+Spotify application that lets you search for songs and display the song details in the sidebar.
 
 ================================================================
 
-### `npm start`
+## Project Goals
 
-the application will start in [http://localhost:3000]
+Use Client Credientials Flow to obtain access token for users who doesn't have spotify account
+can still use the application to search for songs and obtain song details.
+
+================================================================
+
+## How the application works
 
 React JS application that integrates with the Spotify API to search and retrieve music information
+This Spotify application is using Client Credentials Flow to obtain access token
+so even if you don't have a spotify account can still search for song name or artist's name to find the song detail, select the song and it will redirect you to Spotify.com for more detail
 
-This Spotify clone is using Client Credentials Flow to obtain access token
+================================================================
 
-No need to log in and you can start search for song name or artist's name to find the song,
+## Technologies used
 
-select the song and it will redirect you to Spotify.com for more detail
+React JS, React Hook, Spotify API, Semantic UI
 
-Technologies used: React JS, React Hook, Spotify API, Semantic UI
+================================================================
+
+## Quick Start
+
+After cloning the repository onto your local machine, just use `npm install` and `npm start` and you can start searching for songs.
 
 ================================================================
 
